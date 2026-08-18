@@ -108,7 +108,7 @@ def NIWaveNormCheck(Min,Max,Tol=10e-6):
 
 
 def PlotEnergySpectrum(Levels,Hmax,Spacing):
-    """
+    r"""
     Gives a graph of the two-body energy spectrum, 
     
     energy (in \hbar\omega) on the y-axis and
@@ -266,7 +266,7 @@ def PlotEnergyExpect(Nmax,InitialA,InitialJ,FinalA):
     return None
 
 def PlotRamseySignal(Nmax,InitialA,InitialJ,FinalA,Tmax,Spacing):
-    """
+    r"""
     Gives the Ramsey signal over time for an arbitrary quench
 
     Y-axis is Ramsey Signal, X-axis is time in units of 
@@ -364,8 +364,8 @@ def PlotRamseySignal(Nmax,InitialA,InitialJ,FinalA,Tmax,Spacing):
     ax2=plt.subplot(212)
     plt.plot(Tomega, -np.angle(S)/(np.pi),'bo',markersize=5)
     plt.axis([0, Tmax, -1, 1 ])
-    plt.ylabel("$\phi(t)/\pi$",fontsize=35*1.5)
-    plt.xlabel("t$\omega/\pi$",fontsize=35*1.5)
+    plt.ylabel(r"$\phi(t)/\pi$",fontsize=35*1.5)
+    plt.xlabel(r"t$\omega/\pi$",fontsize=35*1.5)
 
     plt.show()
 
@@ -373,7 +373,7 @@ def PlotRamseySignal(Nmax,InitialA,InitialJ,FinalA,Tmax,Spacing):
     return None
 
 def PlotExpectR(Nmax,InitialA,InitialJ,FinalA,Tmax,Spacing):
-    """
+    r"""
     Gives the particle separation expectationover time for
     an arbitrary quench
 
@@ -474,7 +474,7 @@ def PlotExpectR(Nmax,InitialA,InitialJ,FinalA,Tmax,Spacing):
     return None
 
 def PlotRDistrib(Nmax,InitialA,InitialJ,FinalA,Tomega,Rmax,Spacing):
-    """
+    r"""
     Gives P(r,t) at a specified time following an arbitrary
     quench
 
@@ -686,3 +686,4 @@ def DemoOfFunctions():
 #########################
 
 DemoOfFunctions()
+

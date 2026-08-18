@@ -126,7 +126,7 @@ def NIWaveFunc(n,r):
     We only care about the l=0 case for physical reasons.
 
     The energy associated with this wavefunction is 
-    (2n+1.5)\hbar\omega
+    (2n+1.5) hbar omega
     
     Parameters
     ---------------
@@ -176,7 +176,7 @@ def Energies(Nmax,a):
 
     """
 
-    Energies=np.zeros(Nmax)
+    En=np.zeros(Nmax)
 
     #interacting case
     if a != 0:
@@ -186,21 +186,22 @@ def Energies(Nmax,a):
         for j in range(Nmax):
             #Energies[j]=fsolve(funcBinom,j-0.45)#decent at j~171 but get some misses at low
 
-            Energies[j]=fsolve(funcBinom,j-0.01)#good for low energy but some dodginess at j=171
+            #print(fsolve(funcBinom,j-0.01))
+            En[j]=fsolve(funcBinom,j-0.01)[0]#good for low energy but some dodginess at j=171
 
             #I think the binomial function just has some dodginess around that j=171
             #not sure how to get around it
             
 
-        Energies=2*Energies+3/2
-   
+        En=2*En+3/2
+    
     if a==0:
         for j in range(Nmax):
-            Energies[j]=2*j+3/2
+            En[j]=2*j+3/2
 
    
 
-    return Energies
+    return En
 
 
 def WavefFuncOverlaps(Variables):
